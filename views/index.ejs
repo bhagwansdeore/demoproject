@@ -1,0 +1,754 @@
+<%- include layouts/header.ejs %>	
+
+      
+           
+		<!-- main-search start -->
+        <div class="main-search-active">
+            <div class="sidebar-search-icon">
+                <button class="search-close"><span class="zmdi zmdi-close"></span></button>
+            </div>
+            <div class="sidebar-search-input">
+                <form>
+                    <div class="form-search">
+                        <input id="search" class="input-text" value="" placeholder="Search Entire Store" type="search">
+                        <button>
+                            <i class="zmdi zmdi-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- main-search start -->
+		<!--Slider Area Start-->
+		<div class="slider-area mb-60">
+		    <div class="hero-slider owl-carousel">
+                <!--Single Slider Start-->
+		        <div class="single-slider" style="background-image: url(img/slider/slider1.jpg)">   
+                    <div class="slider-progress"></div>
+		            <div class="container">
+		                <div class="hero-slider-content">
+		                    <h4>ending today</h4>
+		                    <h1>25% Off</h1>
+		                    <h2>your entire purchase</h2>
+		                    <h3>Use code MMFSale25. Online and in store</h3>
+		                    <div class="slider-btn">
+		                        <a class="shop-btn" href="#">Shop now</a>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <!--Single Slider End-->
+                <!--Single Slider Start-->
+		        <div class="single-slider" style="background-image: url(img/slider/slider2.jpg)">
+                    <div class="slider-progress"></div>
+		            <div class="container">
+		                <div class="hero-slider-content">
+		                    <h4>it’s finally</h4>
+		                    <h1>up to 30% Off</h1>
+		                    <h2>winter and party wear</h2>
+		                    <h3>hurry before it’s gone!</h3>
+		                    <div class="slider-btn">
+		                        <a class="shop-btn" href="#">Shop now</a>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <!--Single Slider End-->
+		    </div>
+		</div>
+		<!--Slider Area End-->
+		<!--Banner Section Area Start-->
+		<div class="banner-section-area mb-90">
+		    <div class="container-fluid">
+		        <div class="row">
+		            <div class="col-md-4 col-12">
+		                <div class="arubic-single-banner img-full">
+		                    <a href="#"><img src="img/banner/banner1.jpg" alt=""></a>
+		                </div>
+		            </div>
+		            <div class="col-md-4 col-12">
+		                <div class="arubic-single-banner img-full">
+		                    <a href="#"><img src="img/banner/banner2.jpg" alt=""></a>
+		                </div>
+		            </div>
+		            <div class="col-md-4 col-12">
+		                <div class="arubic-single-banner img-full">
+		                    <a href="#"><img src="img/banner/banner3.jpg" alt=""></a>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--Banner Section Area End-->
+
+
+		<!-- Feature Product Section Start -->
+		<div class="product-section mb-25">
+		    <div class="container">
+		        <div class="row">
+                    <!--Section Title Start-->
+		            <div class="col-12">
+		                <div class="section-title mb-50 text-center">
+		                    <h2>Featured products</h2>
+		                    <p>Browse the collection of our best selling and top interesting products</p>
+		                </div>
+		            </div>
+		            <!--Section Title End-->
+		            <!--Product Start-->
+		            <div class="col-12">
+		                <div class="product-slider-wrap row">
+		                    <div class="product-slider owl-carousel">
+
+    <% if(data.length){ 
+                  
+
+                 for(var i = 0;i < data.length;i++) {  %>
+                      
+  <div class="product-group">
+
+                                    <!--Single Product Start-->
+		                            <div class="arubic-single-product">
+		                                <div class="product-img">
+		                                    <a href="single-product.html">
+		                                     <% var productimageslist= data[i].productimages;
+
+                           for(var b = 0;b < productimageslist.length;b++) { if(b==0){ %>
+                              
+                                <img class="first-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="270" height="340" alt=""> <%  } if(b==1){    %>
+                                 <img class="hover-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="270" height="340" alt="">
+                         <%  } }  %>
+		                                       
+		                                      
+		                                    </a>
+		                                    <span class="discount-sticker">-5%</span>
+		                                    <div class="product-action">
+		                                        <ul>
+		                                            <li><a href="#"><i class="zmdi zmdi-shopping-cart-plus"></i></a></li>
+		                                            <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="zmdi zmdi-search"></i></a></li>
+		                                            <li><a href="single-product.html" title="Details"><i class="zmdi zmdi-link"></i></a></li>
+		                                        </ul>
+		                                    </div>
+		                                </div>
+		                                <div class="product-content">
+		                                    <h4><a href="single-product.html"> <%= data[i].product.product_name %></a></h4>
+		                                    <div class="product-reviews">
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                    </div>
+		                                    <div class="product-price">
+		                                        <span class="price">₹<%  var prodsizeslist= data[i].prodsizelist; %>
+					                             <%=  prodsizeslist.price %></span>
+		                                        <span class="regular-price">₹16.51</span>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <!--Single Product End-->
+                                 
+		                        </div>
+
+                      
+                   <% }  } %>
+
+		                      
+
+
+
+		                       
+		                    </div>
+		                </div>
+		            </div>
+		            <!--Product End-->
+		        </div>
+		    </div>
+		</div>
+		<!-- Feature Product Section End -->
+
+		<!-- Feature Product Section Start -->
+		<div class="product-section mb-25">
+		    <div class="container">
+		        <div class="row">
+                    <!--Section Title Start-->
+		            <div class="col-12">
+		                <div class="section-title mb-50 text-center">
+		                    <h2>Suggested Items</h2>
+		                    <p>Browse the collection of our best selling and top interesting products</p>
+		                </div>
+		            </div>
+		            <!--Section Title End-->
+		            <!--Product Start-->
+		            <div class="col-12">
+		                <div class="product-slider-wrap row">
+		                    <div class="product-slider owl-carousel">
+
+    <% if(data.length){ 
+                  
+
+                 for(var i = 0;i < data.length;i++) {  %>
+                      
+  <div class="product-group">
+
+                                    <!--Single Product Start-->
+		                            <div class="arubic-single-product">
+		                                <div class="product-img">
+		                                    <a href="single-product.html">
+		                                     <% var productimageslist= data[i].productimages;
+
+                           for(var b = 0;b < productimageslist.length;b++) { if(b==0){ %>
+                              
+                                <img class="first-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="270" height="340" alt=""> <%  } if(b==1){    %>
+                                 <img class="hover-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="270" height="340" alt="">
+                         <%  } }  %>
+		                                       
+		                                      
+		                                    </a>
+		                                    <span class="discount-sticker">-5%</span>
+		                                    <div class="product-action">
+		                                        <ul>
+		                                            <li><a href="#"><i class="zmdi zmdi-shopping-cart-plus"></i></a></li>
+		                                            <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="zmdi zmdi-search"></i></a></li>
+		                                            <li><a href="single-product.html" title="Details"><i class="zmdi zmdi-link"></i></a></li>
+		                                        </ul>
+		                                    </div>
+		                                </div>
+		                                <div class="product-content">
+		                                    <h4><a href="single-product.html"> <%= data[i].product.product_name %></a></h4>
+		                                    <div class="product-reviews">
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                    </div>
+		                                    <div class="product-price">
+		                                        <span class="price">₹<%  var prodsizeslist= data[i].prodsizelist; %>
+					                             <%=  prodsizeslist.price %></span>
+		                                        <span class="regular-price">₹16.51</span>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <!--Single Product End-->
+                                 
+		                        </div>
+
+                      
+                   <% }  } %>
+
+		                      
+
+
+
+		                       
+		                    </div>
+		                </div>
+		            </div>
+		            <!--Product End-->
+		        </div>
+		    </div>
+		</div>
+		<!-- Feature Product Section End -->
+
+
+		<!-- Call To Action Start -->
+		<div class="call-to-action-area mb-85">
+		    <div class="container">
+		        <div class="contact-static text-center">
+		          <div class="action-logo mb-20">
+		              <img src="img/logo/logo_static.png" alt="">
+		          </div>
+		          <h2>trendy 2019 <span>fashion</span> clothes</h2>
+		          <h3>sale <span>10%</span> everything online</h3>
+		          <a class="call-action-btn" href="#">shop now</a>
+		        </div>
+		    </div>
+		</div>
+		<!-- Call To Action End -->
+		<!-- Product Catalog Area Start -->
+		<div class="product-catalog-area mb-35">
+		    <div class="container">
+		        <div class="row">
+                    <!-- New Product Start-->
+		            <div class="col-lg-6 col-12">
+		                <div class="new-product-area">
+		                    <div class="row">
+		                        <div class="col-md-12">
+                                    <!--Section Title Start-->
+		                            <div class="section-title section-title-left mb-50">
+		                                <h2>New Products</h2>
+		                                <p>We offer the best selection fashion at prices you will love!</p>
+		                            </div>
+		                            <!--Section Title End-->
+		                        </div>
+		                    </div>
+		                    <div class="new-product-items">
+		                        <div class="new-product-slider owl-carousel">
+
+                             <% if(data.length){ 
+                   for(var i = 0;i < data.length;i++) {  %>
+                      
+                            <div class="product-group">
+
+                                    <!--Single Product Start-->
+		                            <div class="arubic-single-product">
+		                                <div class="product-img">
+		                                    <a href="single-product.html">
+		                                     <% var productimageslist= data[i].productimages;
+
+                           for(var b = 0;b < productimageslist.length;b++) { if(b==0){ %>
+                              
+                                <img class="first-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="270" height="340" alt=""> <%  } if(b==1){    %>
+                                 <img class="hover-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="270" height="340" alt="">
+                         <%  } }  %>
+		                                       
+		                                      
+		                                    </a>
+		                                    <span class="discount-sticker">-5%</span>
+		                                    <div class="product-action">
+		                                        <ul>
+		                                            <li><a href="#"><i class="zmdi zmdi-shopping-cart-plus"></i></a></li>
+		                                            <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="zmdi zmdi-search"></i></a></li>
+		                                            <li><a href="single-product.html" title="Details"><i class="zmdi zmdi-link"></i></a></li>
+		                                        </ul>
+		                                    </div>
+		                                </div>
+		                                <div class="product-content">
+		                                    <h4><a href="single-product.html"> <%= data[i].product.product_name %></a></h4>
+		                                    <div class="product-reviews">
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                    </div>
+		                                    <div class="product-price">
+		                                        <span class="price">₹<%  var prodsizeslist= data[i].prodsizelist; %>
+					                             <%=  prodsizeslist.price %>
+		                                        </span>
+		                                        <span class="regular-price">₹16.51</span>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <!--Single Product End-->
+                                 
+		                        </div>
+
+                      
+                   <% }  } %>
+                                   
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <!-- New Product End-->
+		            <!-- On Sale Product Start-->
+		            <div class="col-lg-6 col-12">
+		                <div class="on-sale-product-area">
+		                    <div class="row">
+		                        <div class="col-md-12">
+                                    <!--Section Title Start-->
+		                            <div class="section-title section-title-left mb-50">
+		                                <h2>on sale products</h2>
+		                                <p>Browse the collection of our on sale products</p>
+		                            </div>
+		                            <!--Section Title End-->
+		                        </div>
+		                    </div>
+		                   <div class="on-sale-product-items">
+                              <div class="on-sale-product-slider owl-carousel">
+       
+                               <!--first row-->
+                                <div class="on-sale-group-product">
+                                   <% if(data.length){ 
+                   for(var i = 0;i < data.length;i++) {
+                              if(i<3){
+
+                     %>
+                                    <!--Single On Sale Product Start-->
+                                    <div class="single-on-slae-product">
+                                        <div class="on-slae-product-img">
+                                            <a href="single-product.html">
+                                               <% var productimageslist= data[i].productimages;
+
+                           for(var b = 0;b < productimageslist.length;b++) { if(b==0){ %>
+                              
+                                <img class="first-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="100" height="125" alt=""> <%  } if(b==1){    %>
+                                 <img class="hover-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="100" height="125" alt="">
+                         <%  } }  %>
+                                            </a>
+                                        </div>
+                                        <div class="one-sale-product-content">
+                                            <h4><a href="single-product.html"><%= data[i].product.product_name %></a></h4>
+                                           <div class="product-reviews">
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="product-price">
+                                                <span class="price">₹<%  var prodsizeslist= data[i].prodsizelist; %>
+					                             <%=  prodsizeslist.price %></span>
+                                                <span class="regular-price">₹16.51</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Single On Sale Product End-->
+                               <% }  } } %>
+                                  
+                                </div>
+
+                                  <!--second row-->
+                                <div class="on-sale-group-product">
+                                   <% if(data.length){ 
+                   for(var i = 0;i < data.length;i++) {
+                              if(i>2 && i<6){
+
+                     %>
+                                    <!--Single On Sale Product Start-->
+                                    <div class="single-on-slae-product">
+                                        <div class="on-slae-product-img">
+                                            <a href="single-product.html">
+                                               <% var productimageslist= data[i].productimages;
+
+                           for(var b = 0;b < productimageslist.length;b++) { if(b==0){ %>
+                              
+                                <img class="first-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="100" height="125" alt=""> <%  } if(b==1){    %>
+                                 <img class="hover-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="100" height="125" alt="">
+                         <%  } }  %>
+                                            </a>
+                                        </div>
+                                        <div class="one-sale-product-content">
+                                            <h4><a href="single-product.html"><%= data[i].product.product_name %></a></h4>
+                                           <div class="product-reviews">
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="product-price">
+                                                <span class="price">₹<%  var prodsizeslist= data[i].prodsizelist; %>
+					                             <%=  prodsizeslist.price %></span>
+                                                <span class="regular-price">₹16.51</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Single On Sale Product End-->
+                               <% }  } } %>
+                                  
+                                </div>
+
+
+
+                                 <!--third row-->
+                                <div class="on-sale-group-product">
+                                   <% if(data.length){ 
+                   for(var i = 0;i < data.length;i++) {
+                              if(i>1 && i<5){
+
+                     %>
+                                    <!--Single On Sale Product Start-->
+                                    <div class="single-on-slae-product">
+                                        <div class="on-slae-product-img">
+                                            <a href="single-product.html">
+                                               <% var productimageslist= data[i].productimages;
+
+                           for(var b = 0;b < productimageslist.length;b++) { if(b==0){ %>
+                              
+                                <img class="first-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="100" height="125" alt=""> <%  } if(b==1){    %>
+                                 <img class="hover-img" src="http://local.mmf.com/upload/<%= productimageslist[b].image_path %>" width="100" height="125" alt="">
+                         <%  } }  %>
+                                            </a>
+                                        </div>
+                                        <div class="one-sale-product-content">
+                                            <h4><a href="single-product.html"><%= data[i].product.product_name %></a></h4>
+                                           <div class="product-reviews">
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="product-price">
+                                                <span class="price">₹<%  var prodsizeslist= data[i].prodsizelist; %>
+					                             <%=  prodsizeslist.price %></span>
+                                                <span class="regular-price">₹16.51</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Single On Sale Product End-->
+                               <% }  } } %>
+                                  
+                                </div>
+
+
+                                 
+
+
+
+
+                            
+
+
+                                </div>
+                           </div>
+                           
+		                </div>
+		            </div>
+		            <!-- On Sale Product End-->
+		        </div>
+		    </div>
+		</div>
+		<!-- Product Catalog Area Start -->
+		<!-- Feature Section Start -->
+		<div class="feature-section gray-bg mb-90 pt-80 pb-50 text-center">
+		    <div class="container">
+		        <div class="row">
+                    <!--Single Feature Start-->
+		            <div class="col-md-4 col-12 mb-30">
+		                <div class="arubic-single-feature">
+                            <div class="feature-icon">
+                                <img src="img/feature/feature1.png" alt="">
+                            </div>
+                            <div class="feature-content">
+                                <h3>Free Shipping</h3>
+                                <p>Free shipping on all order over $99.00</p>
+                            </div>
+		                </div>
+		            </div>
+		            <!--Single Feature End-->
+                    <!--Single Feature Start-->
+		            <div class="col-md-4 col-12 mb-30">
+		                <div class="arubic-single-feature">
+                            <div class="feature-icon">
+                                <img src="img/feature/feature2.png" alt="">
+                            </div>
+                            <div class="feature-content">
+                                <h3>Online Support 24/7</h3>
+                                <p>We are here to make your day. Let’s talk !</p>
+                            </div>
+		                </div>
+		            </div>
+		            <!--Single Feature End-->
+                    <!--Single Feature Start-->
+		            <div class="col-md-4 col-12 mb-30">
+		                <div class="arubic-single-feature">
+                            <div class="feature-icon">
+                                <img src="img/feature/feature1.png" alt="">
+                            </div>
+                            <div class="feature-content">
+                                <h3>Money Back Guarantee!</h3>
+                                <p>We free 30 days 100% money back & return</p>
+                            </div>
+		                </div>
+		            </div>
+		            <!--Single Feature End-->
+		        </div>
+		    </div>
+		</div>
+		<!-- Feature Section End -->
+		<!-- Testimonials And Instagram Area Start -->
+		<div class="testimonial-instagram-area mb-75">
+		    <div class="container">
+		        <div class="row">
+                    <!-- Testimonial-->
+		            <div class="col-lg-6 col-12">
+		                <div class="testimonial-container">
+		                    <!--Section Title Start-->
+		                    <div class="section-title section-title-left mb-50">
+		                        <h2>testimonials</h2>
+		                    </div>
+		                    <!--Section Title End-->
+		                    <!--Testimonial Slider Start-->
+		                    <div class="testimonial-slider owl-carousel">
+                                <!--Single Testimonial Start -->
+		                        <div class="single-testimonial">
+		                            <div class="testimonial-content">
+		                                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.</p>
+		                            </div>
+		                            <div class="testimonial-author">
+		                                <img src="img/testimonial/testimonial1.png" alt="">
+		                                <div class="author-title">
+		                                    <p class="author-name">orando BLoom</p>
+		                                    <p class="author-email">demo@hastech.company</p>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <!--Single Testimonial Start -->
+                                <!--Single Testimonial Start -->
+		                        <div class="single-testimonial">
+		                            <div class="testimonial-content">
+		                                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.</p>
+		                            </div>
+		                            <div class="testimonial-author">
+		                                <img src="img/testimonial/testimonial2.png" alt="">
+		                                <div class="author-title">
+		                                    <p class="author-name">Md Shohel</p>
+		                                    <p class="author-email">demo@hastech.company</p>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <!--Single Testimonial Start -->
+                                <!--Single Testimonial Start -->
+		                        <div class="single-testimonial">
+		                            <div class="testimonial-content">
+		                                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.</p>
+		                            </div>
+		                            <div class="testimonial-author">
+		                                <img src="img/testimonial/testimonial3.png" alt="">
+		                                <div class="author-title">
+		                                    <p class="author-name">orando BLoom</p>
+		                                    <p class="author-email">demo@hastech.company</p>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <!--Single Testimonial Start -->
+		                    </div>
+		                    <!--Testimonial Slider End-->
+		                </div>
+		            </div>
+		            <!-- Testimonial-->
+		            <!-- Instagram-->
+		            <div class="col-lg-6 col-12">
+		                <div class="instagram-container">
+		                    <div class="title-instagram">
+		                        <h2>#Instagram<span>@Arubic</span></h2>
+		                        <a href="#" target="_blank">Follow our instagram</a>
+		                    </div>
+		                    <div class="instagram-slider">
+		                        <ul id="Instafeed"></ul>
+		                    </div>
+		                </div>
+		            </div>
+		            <!-- Instagram-->
+		        </div>
+		    </div>
+		</div>
+		<!-- Testimonials And Instagram Area End -->
+		<!-- Blog Area Start -->
+		<div class="blog-area gray-bg2 pt-90 pb-85">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-md-12 col-12">
+		                <div class="section-title mb-50 text-center">
+		                    <h2>From the blog</h2>
+		                    <p>Update the latest article, to help customers capture the most authentic of the operation of the store.</p>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="blog-items row">
+		            <div class="blog-slider owl-carousel">
+                        <!--Single Blog Start-->
+                        <div class="single-blog">
+                            <div class="blog-info">
+                                <div class="blog-date-time">
+                                    <span class="blog-month">August</span>
+                                    <span class="blog-date">03</span>
+                                </div>
+                                <div class="single-blog-content">
+                                    <div class="blog-title">
+                                       <h4><a href="single-blog.html">This is Second Post For XipBlog</a></h4>
+                                    </div>
+                                    <div class="blog-meta">
+                                        <ul>
+                                            <li><i class="fa fa-calendar"></i>Aug 03, 2017</li>
+                                            <li>-</li>
+                                            <li><i class="fa fa-user"></i>Demo HasTech</li>
+                                        </ul>
+                                    </div>
+                                    <p class="blog-description">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...
+                                    </p>
+                                    <a class="read-btn" href="single-blog.html"> Read More </a>
+                                </div>
+                            </div>
+                        </div>  
+                        <!--Single Blog End-->
+                        <!--Single Blog Start-->
+                        <div class="single-blog">
+                            <div class="blog-info">
+                                <div class="blog-date-time">
+                                    <span class="blog-month">August</span>
+                                    <span class="blog-date">03</span>
+                                </div>
+                                <div class="single-blog-content">
+                                    <div class="blog-title">
+                                       <h4><a href="single-blog.html">This is Third Post For XipBlog</a></h4>
+                                    </div>
+                                    <div class="blog-meta">
+                                        <ul>
+                                            <li><i class="fa fa-calendar"></i>Aug 03, 2017</li>
+                                            <li>-</li>
+                                            <li><i class="fa fa-user"></i>Demo HasTech</li>
+                                        </ul>
+                                    </div>
+                                    <p class="blog-description">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...
+                                    </p>
+                                    <a class="read-btn" href="single-blog.html"> Read More </a>
+                                </div>
+                            </div>
+                        </div>  
+                        <!--Single Blog End-->
+                        <!--Single Blog Start-->
+                        <div class="single-blog">
+                            <div class="blog-info">
+                                <div class="blog-date-time">
+                                    <span class="blog-month">August</span>
+                                    <span class="blog-date">03</span>
+                                </div>
+                                <div class="single-blog-content">
+                                    <div class="blog-title">
+                                       <h4><a href="single-blog.html">This is Fourth Post For XipBlog</a></h4>
+                                    </div>
+                                    <div class="blog-meta">
+                                        <ul>
+                                            <li><i class="fa fa-calendar"></i>Aug 03, 2017</li>
+                                            <li>-</li>
+                                            <li><i class="fa fa-user"></i>Demo HasTech</li>
+                                        </ul>
+                                    </div>
+                                    <p class="blog-description">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...
+                                    </p>
+                                    <a class="read-btn" href="single-blog.html"> Read More </a>
+                                </div>
+                            </div>
+                        </div>  
+                        <!--Single Blog End-->
+                        <!--Single Blog Start-->
+                        <div class="single-blog">
+                            <div class="blog-info">
+                                <div class="blog-date-time">
+                                    <span class="blog-month">August</span>
+                                    <span class="blog-date">03</span>
+                                </div>
+                                <div class="single-blog-content">
+                                    <div class="blog-title">
+                                       <h4><a href="single-blog.html">This is First Post For XipBlog</a></h4>
+                                    </div>
+                                    <div class="blog-meta">
+                                        <ul>
+                                            <li><i class="fa fa-calendar"></i>Aug 03, 2017</li>
+                                            <li>-</li>
+                                            <li><i class="fa fa-user"></i>Demo HasTech</li>
+                                        </ul>
+                                    </div>
+                                    <p class="blog-description">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...
+                                    </p>
+                                    <a class="read-btn" href="single-blog.html"> Read More </a>
+                                </div>
+                            </div>
+                        </div>  
+                        <!--Single Blog End-->
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!-- Blog Area End -->
+        <!-- //top-brands -->
+   
+<%- include layouts/footer.ejs %>
